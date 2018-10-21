@@ -1,3 +1,17 @@
+---
+title: "Data Clean Up Code"
+author: "Corey Arnouts"
+date: "October 21, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data Clean Up Code
+#The Purpose of this code was to parse out the different job skills that may be clumped together by punctation or by words such as "and", "or", etc....
+```{r}
 library(data.table)
 library(plyr)
 library(dplyr)
@@ -82,5 +96,11 @@ data_5 <-data_5[c(2,1)]
 #captilize the words
 data_5$skill <- capitalize(data_5$skill)
 write.csv(data_5, file = "data_science.csv")
+
+
+#display the data
+str(data_5)
+tail(data_5)
+```
 
 
